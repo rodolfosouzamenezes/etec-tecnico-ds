@@ -7,4 +7,4 @@ Envie o link da seu site e do seu github que faça cadastro de uma entidade do s
 * Construa um arquivo Teste para sua entidade __(Cadastrar e Listar)__
 * Atividade em grupo de TCC
 
-### Link do site: [http://3dsfatecbedolfo.sportsontheweb.net/ListarEndereco.php](http://3dsfatecbedolfo.sportsontheweb.net/ListarEndereco.php)
+### Link do site: [http://3dsfatecbedolfo.sportsontheweb.net/ListarEndereco.html](http://3dsfatecbedolfo.sportsontheweb.net/ListarEndereco.html)
