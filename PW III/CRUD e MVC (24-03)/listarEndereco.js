@@ -1,28 +1,29 @@
 let dados;
 
 function carregarDados(funcao){
-    fetch("/crudmvc.scienceontheweb.net/ListarCliente.php")
-    .then(conteudo => conteudo.text())
-    .then(texto => {
-        dados = JSON.parse(texto)
-        exibirTabela();
-    });
-    funcao();
+    fetch("http://3dsfatecbedolfo.sportsontheweb.net/ListarEndereco.php")
+        .then(conteudo => conteudo.text())
+        .then(texto => {
+            dados = JSON.parse(texto);
+            funcao();
+        });
 }
 
 function exibirTabela(){
     let tabela = '';
-    dados.forEach(Cliente => {
+    dados.forEach(endereco => {
         tabela += '<tr>';
-        tabela += '<td>${Cliente.Nome}</td>';
-        tabela += '<td>${Cliente.Telefone}</td>';
-        tabela += '<td>${Cliente.Altura}</td>';
-        tabela += '<td>${Cliente.Peso}</td>';
+        tabela += `<td>${endereco.rua}</td>`;
+        tabela += `<td>${endereco.numero}</td>`;
+        tabela += `<td>${endereco.bairro}</td>`;
+        tabela += `<td>${endereco.complemento}</td>`;
+        tabela += `<td>${endereco.cep}</td>`;
+        tabela += `<td>${endereco.cidade}</td>`;
+        tabela += `<td>${endereco.estado}</td>`;
+        tabela += `<td>${endereco.pais}</td>`;
         tabela += '</tr>';
-
     });
     document.getElementsByTagName('tbody')[0].innerHTML = tabela;
-
 }
 
 function iniciar(){
