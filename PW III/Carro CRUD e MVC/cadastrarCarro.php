@@ -7,7 +7,7 @@ include "Carro.php";
 
 extract($_POST);
 
-$chkAtualizado = isset($_POST['chkAtualizado']);
+$chkIpvaPago = isset($_POST['chkIpvaPago']);
 
 $novoCadastro = new Carro($txtPlaca, $txtAno,
         $chkIpvaPago, '2022-02-24 09:30:00', $txtIpvaValor);
