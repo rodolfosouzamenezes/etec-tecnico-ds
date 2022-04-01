@@ -1,7 +1,8 @@
+/*CRIANDO e USANDO DATABASE*/
 CREATE DATABASE concessionaria;
 USE concessionaria;
 
-# CRIANDO TABELAS, PKs e FKs
+/*CRIANDO TABELAS, PKs e FKs*/
 CREATE TABLE cliente (
     cpf INTEGER NOT NULL,
     nome VARCHAR(50) NOT NULL,
@@ -35,7 +36,7 @@ CREATE TABLE manutencao (
         REFERENCES carro (id)
 );
  
-# INCERINDO DADOS
+/*INCERINDO DADOS*/
 INSERT INTO cliente (cpf, nome, endereco, cidade, telefone) 
 	VALUES (12345678901, "Solange Almeida", "R. 7 de setembro, 100", NULL, "15999999999"),
 		   (98765432123, "Taís Araújo", "R. 31 de março, 400", "Votorantim", "15999999991"),
@@ -59,4 +60,42 @@ INSERT INTO carro (placa, cor, modelo, ano, cpf_cliente)
 	 
 SELECT * FROM carro;
 
-#DROP DATABASE concessionaria;
+INSERT INTO manutencao (data_manutencao, id_carro, valor) 
+	VALUES ("2018-09-24", 1, 800.00),
+           ("2018-09-20", 2, 1000.00),
+           ("2018-08-24", 1, 300.00),
+           ("2018-08-24", 3, 450.00),
+           ("2018-08-24", 4, 986.00),
+           ("2018-07-24", 5, 555.00),
+           ("2018-07-24", 6, 130.00),
+           ("2018-05-01", 7, 1000.00),
+           ("2018-05-01", 8, 1205.00);
+	 
+SELECT * FROM manutencao;
+
+/*
+a)Altere as seguintes informações:
+-Alterar todos os clientes que estão sem cidade para a cidade de Sorocaba
+-Alterar os carros da marca Corola para Corolla
+-Alterar todas as manutenções cujo valor seja maior que 1000,00 para 01/01/2018.
+*/
+UPDATE cliente
+    SET cidade = "Sorocaba"
+    WHERE cidade = NULL;
+
+UPDATE carro
+    SET marca = "Corola"
+    WHERE marca = "Corolla";
+
+UPDATE manutencao
+    SET valor >= 1000.00
+    WHERE data_manutencao = "2018-01-01";
+
+/*
+b)Excluir a cliente Taís Araújo
+*/
+DELETE FROM cliente FROM nome = "Taís Araújo";
+
+/*
+DROP DATABASE concessionaria;
+*/
