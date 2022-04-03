@@ -4,7 +4,7 @@ USE concessionaria;
 
 /*CRIANDO TABELAS, PKs e FKs*/
 CREATE TABLE cliente (
-    cpf INTEGER NOT NULL,
+    cpf VARCHAR(11) NOT NULL,
     nome VARCHAR(50) NOT NULL,
     endereco VARCHAR(120) NOT NULL,
     cidade VARCHAR(60),
@@ -18,7 +18,7 @@ CREATE TABLE carro (
     cor VARCHAR(15) NOT NULL,
     modelo VARCHAR(20) NOT NULL,
     ano INTEGER NOT NULL,
-    cpf_cliente INTEGER,
+    cpf_cliente NUMERIC(11),
     PRIMARY KEY (id),
     CONSTRAINT fk_cpf_cliente
 		FOREIGN KEY (cpf_cliente)
@@ -28,7 +28,7 @@ CREATE TABLE carro (
 CREATE TABLE manutencao (
     id INTEGER NOT NULL AUTO_INCREMENT,
     data_manutencao DATE NOT NULL,
-    valor FLOAT NOT NULL,
+    valor FLOAT(8,2) NOT NULL,
     id_carro INTEGER,
 	PRIMARY KEY (id),
     CONSTRAINT fk_id_carro
@@ -38,12 +38,12 @@ CREATE TABLE manutencao (
  
 /*INCERINDO DADOS*/
 INSERT INTO cliente (cpf, nome, endereco, cidade, telefone) 
-	VALUES (12345678901, "Solange Almeida", "R. 7 de setembro, 100", NULL, "15999999999"),
+	VALUES (12345678901, "Solange Almeida", "R. 7 de setembro, 100", "", "15999999999"),
 		   (98765432123, "Taís Araújo", "R. 31 de março, 400", "Votorantim", "15999999991"),
-           (22233344455, "Marcos Palmeira", "R. Itavuvu, 1000", NULL, "15999999992"),
+           (22233344455, "Marcos Palmeira", "R. Itavuvu, 1000", "", "15999999992"),
            (12312312312, "Junior Moraes", "R. Avarenga Dantas, 1", "Mairinque", "11999999993"),
            (44455566677, "Cristiane Torloni", "R. Marcio de Sá, 2", "São Roque", "15999999994"),
-           (88877766655, "Maria do Bairro", "R. Ubirajara, 2", NULL, "15999999995");
+           (88877766655, "Maria do Bairro", "R. Ubirajara, 2", "", "15999999995");
            
 SELECT * FROM cliente;
 
@@ -81,20 +81,26 @@ a)Altere as seguintes informações:
 */
 UPDATE cliente
     SET cidade = "Sorocaba"
-    WHERE cidade = NULL;
+    WHERE cidade = "";
+
+SELECT * FROM cliente;
 
 UPDATE carro
-    SET marca = "Corola"
-    WHERE marca = "Corolla";
+    SET modelo = 'Corolla'
+    WHERE modelo = 'Corola';
+
+SELECT * FROM carro;
 
 UPDATE manutencao
-    SET valor >= 1000.00
-    WHERE data_manutencao = "2018-01-01";
+    SET data_manutencao = "2018-01-01"
+    WHERE valor > 1000.00;
+
+SELECT * FROM manutencao;
 
 /*
 b)Excluir a cliente Taís Araújo
 */
-DELETE FROM cliente FROM nome = "Taís Araújo";
+DELETE FROM cliente WHERE nome = "Taís Araújo";
 
 /*
 DROP DATABASE concessionaria;
