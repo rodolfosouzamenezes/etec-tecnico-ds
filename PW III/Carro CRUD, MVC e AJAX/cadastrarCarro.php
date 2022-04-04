@@ -10,5 +10,5 @@ extract($_POST);
 $chkIpvaPago = isset($_POST['chkIpvaPago']);
 
 $novoCadastro = new Carro($txtPlaca, $txtAno,
-        $chkIpvaPago, '2022-02-24 09:30:00', $txtIpvaValor);
+        $chkIpvaPago, $txtIpvaData, $txtIpvaValor);
 $novoCadastro->Cadastrar();

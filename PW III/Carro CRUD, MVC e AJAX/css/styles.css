@@ -1,0 +1,29 @@
+.navbar-dark {
+    padding: 15px;
+}
+
+.content {
+    margin-top: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.btn-group {
+    margin-bottom: 30px;
+}
+
+.btn-secondary {
+    width: 45.5vw;
+}
+
+label {
+    font-weight: bold;
+}
+
+.dinheiro {
+    display: inline-block;
+}
+
+.form-check-label {
+    font-weight: normal;
+}
