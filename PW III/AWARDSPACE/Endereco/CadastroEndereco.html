@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Endereço</title>
+    <script src="cadastroEndereco.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="Numeronymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+                <h5 class="text-white h4">Entidade Endereço</h5>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <button 
+                  class="navbar-toggler" 
+                  type="button" 
+                  data-toggle="collapse" 
+                  data-target="#navbarToggleExternalContent" 
+                  aria-controls="navbarToggleExternalContent" 
+                  aria-expanded="false" 
+                  aria-label="Alterna navegação"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+    </div>
+
+    <div class="content">
+    <form>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active btn-lg">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked>Cadastrar
+            </label>
+            <label class="btn btn-secondary btn-lg" onClick="window.location.href='http://3dsfatecbedolfo.sportsontheweb.net/Endereco/ListarEndereco.html'">
+              <input type="radio" name="options" id="option2" autocomplete="off">Listar
+            </label>
+        </div>
+    
+        <div class="card">
+            <h5 class="card-header">Cadastrar Endereço</h5>
+            <div class="card-body">
+              
+              
+              
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label for="txtCEP">CEP</label>
+                  <input 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Insira o CEP" 
+                        required 
+                        id="txtCEP" 
+                        name="txtCEP" 
+                        onkeypress="formatar('#####-###', this)">
+                </div>
+                  <div class="form-group col-md-8">
+                    <label for="txtRua">Rua</label>
+                    <input 
+                          type="text" 
+                          class="form-control" 
+                          placeholder="Insira a Rua" 
+                          required 
+                          id="txtRua" 
+                          name="txtRua" >
+                  </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="txtNumero">Número</label>                     
+                      <label class="sr-only" for="inlineFormInputGroup">Número</label>
+                      <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">Nº</div>
+                        </div>
+                        <input 
+                              class="form-control" 
+                              type="number" 
+                              id="txtNumero" 
+                              name="txtNumero"
+                              placeholder="0000">
+                      </div>
+                    </div>                   
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="txtBairro">Bairro</label>
+                      <input 
+                            type="text" 
+                            class="form-control" 
+                            id="txtBairro" 
+                            placeholder="Insira o Bairro" 
+                            required 
+                            name="txtBairro">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="txtCidade">Cidade</label>
+                      <input 
+                            type="text" 
+                            class="form-control" 
+                            id="txtCidade" 
+                            placeholder="Insira a Cidade" 
+                            required 
+                            name="txtCidade">
+
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="txtEstado">Estado</label>
+                      <input 
+                            type="text" 
+                            class="form-control" 
+                            id="txtEstado" 
+                            placeholder="SP" 
+                            required 
+                            name="txtEstado"
+                            onkeyup="inputUpperCase(this)" >
+
+                    </div>
+                  </div>  
+                  
+                  <div class="form-row">
+                    <div class="form-group col-md-8">
+                      <label for="txtComplemento">Complemento</label>
+                      <input 
+                            type="text" 
+                            class="form-control" 
+                            id="txtComplemento" 
+                            placeholder="Casa, Apartamento B2 A4..." 
+                            required 
+                            name="txtComplemento">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="txtPais">País</label>
+                      <input 
+                            type="text" 
+                            class="form-control" 
+                            id="txtPais" 
+                            placeholder="Insira o País" 
+                            required 
+                            name="txtPais">
+
+                    </div>
+                    
+                  </div>            
+        
+
+                  <input type="submit" class="btn btn-primary btn-lg btn-block" value="Cadastrar"></input>
+          </div>
+
+    </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="Numeronymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="Numeronymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="Numeronymous"></script>
+
+    <script type="text/javascript">
+      function inputUpperCase(string, mask, documento) {
+          res =string.value.toUpperCase();
+
+          string.value = res;
+      }
+
+      function formatar(mask, documento) {
+        var i = documento.value.length;
+        var saida = mask.substring(0,1);
+        var texto = mask.substring(i);
+
+        if (texto.substring(0,1) != saida) {
+          documento.value += texto.substring(0,1);
+        }
+      }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+CREATE TABLE Endereco (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    cep INT(8) NOT NULL,
+    rua VARCHAR(100) NOT NULL,
+    numero INT(6) NOT NULL,
+    bairro VARCHAR(50),
+    cidade VARCHAR(60) NOT NULL,
+    estado VARCHAR(2) NOT NULL,
+    complemento VARCHAR(100),
+    pais VARCHAR(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
