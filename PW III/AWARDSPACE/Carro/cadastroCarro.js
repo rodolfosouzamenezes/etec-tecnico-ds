@@ -13,7 +13,7 @@ function enviar(event){
 
 function cadastrar(){
     let formData = new FormData(formulario);
-    fetch("http://3dsfatecbedolfo.sportsontheweb.net/cadastrarCarro.php",
+    fetch("http://3dsfatecbedolfo.sportsontheweb.net/Carro/cadastrarCarro.php",
     {
         method:'POST',
         body:formData

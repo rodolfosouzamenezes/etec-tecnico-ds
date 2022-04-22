@@ -1,7 +1,7 @@
 let dados;
 
 function carregarDados(funcao){
-    fetch("http://3dsfatecbedolfo.sportsontheweb.net/ListarCarro.php")
+    fetch("http://3dsfatecbedolfo.sportsontheweb.net/Carro/ListarCarro.php")
         .then(conteudo => conteudo.text())
         .then(texto => {
             dados = JSON.parse(texto);
